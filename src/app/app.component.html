@@ -1,0 +1,48 @@
+<div class="root">
+  <lib-drop-down [(isOpen)]="dropDownIsOpen">
+    <lib-drop-down-label>
+      Click me to open!
+    </lib-drop-down-label>
+    <lib-drop-down-label-opened>
+      Click me to close!
+    </lib-drop-down-label-opened>
+    <lib-drop-down-content>
+      <div class="popup-content" *ngIf="dropDownIsOpen">
+        <h2>Popup Content</h2>
+        <button (click)="showModalDialog()">Show Modal Dialog</button>
+      </div>
+    </lib-drop-down-content>
+  </lib-drop-down>
+
+  <lib-modal-dialog [(isOpen)]="modalIsOpen" title="Modal Dialog Title">
+    <div class="modal-content">
+      <h1>Content</h1>
+    </div>
+  </lib-modal-dialog>
+</div>
+<style>
+  .root{    
+    height: 50px;
+    width: 250px;
+    border: 1px solid gray;
+    margin-top: 50px;
+    margin-left: 0px;
+    overflow: hidden;
+  }
+
+  .popup-content{
+    text-align: center;
+    margin: 20px;
+  }
+
+  .modal-content{
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    background: #eee;
+  }
+
+  lib-drop-down{
+    margin: 10px;
+  }
+</style>
